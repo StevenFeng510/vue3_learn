@@ -1,21 +1,20 @@
-<script setup lang="ts"></script>
-
 <template>
-    <div class="content">
-        <div class="content-items" v-for="(item, index) in 100" :key="index">
-            {{ item }}
-        </div>
+    <div class="content" style="position: relative">
+        <teleport to=".modal">
+            <div class="loading">loading...111</div>
+        </teleport>
     </div>
 </template>
 
+<script setup lang="ts">
+import { reactive, ref, markRaw, toRaw, defineAsyncComponent } from 'vue';
+</script>
+
 <style lang="less" scoped>
-.content {
-    flex: 1;
-    overflow: auto;
-    margin: 20px;
-    &-items {
-        padding: 20px;
-        border: 1px solid #ccc;
-    }
+.loading {
+    position: relative;
+    right: 10px;
+    top: 10px;
+    background-color: aquamarine;
 }
 </style>
