@@ -42,6 +42,7 @@ const data = reactive<Tabs[]>([
     },
 ]);
 
+// 以comName为key 切换tab
 const switchCom = (item: Tabs) => {
     current.comName = item.comName;
 };

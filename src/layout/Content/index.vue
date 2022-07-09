@@ -1,20 +1,31 @@
 <template>
-    <div class="content" style="position: relative">
-        <teleport to=".modal">
-            <div class="loading">loading...111</div>
-        </teleport>
+    <div>
+        <!-- 数字过渡 -->
+        <input v-model="num.current" type="number" step="20" />
+        <div>
+            {{ num.tweenedNumber.toFixed(0) }}
+        </div>
     </div>
 </template>
 
 <script setup lang="ts">
-import { reactive, ref, markRaw, toRaw, defineAsyncComponent } from 'vue';
+import { reactive, watch } from 'vue';
+import gsap from 'gsap';
+
+const num = reactive({
+    current: 0,
+    tweenedNumber: 0,
+});
+
+watch(
+    () => num.current,
+    (newVal, oldVal) => {
+        gsap.to(num, {
+            duration: 1,
+            tweenedNumber: newVal,
+        });
+    }
+);
 </script>
 
-<style lang="less" scoped>
-.loading {
-    position: relative;
-    right: 10px;
-    top: 10px;
-    background-color: aquamarine;
-}
-</style>
+<style lang="less" scoped></style>
