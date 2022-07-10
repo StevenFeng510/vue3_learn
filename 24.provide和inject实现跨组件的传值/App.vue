@@ -1,22 +1,15 @@
 <template>
     <div class="App">
-        <!-- <A @on-click="getFlag"></A>
-        <B :flag="Flag"></B> -->
+        <h1>根组件</h1>
         <A></A>
-        <B></B>
     </div>
 </template>
 <script setup lang="ts">
 import { ref, provide } from 'vue';
 import A from './components/A.vue';
-import B from './components/B.vue';
 
-// ①通过父组件做一个桥梁 将A组件的参数传给B组件
-// let Flag = ref(false);
-
-// const getFlag = (params: boolean) => {
-//     Flag.value = params;
-// };
+// provide 和 inject 完成 跨组件的传值 ref包装成响应式的值
+provide('flag', ref(false));
 </script>
 
 <style lang="less">
