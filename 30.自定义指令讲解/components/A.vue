@@ -1,14 +1,17 @@
 <template>
     <div class="A">
         <h1>A组件</h1>
+        <button @click="emit">派发一个事件</button>
     </div>
 </template>
 <script setup lang="ts">
-import { ref, getCurrentInstance, useAttrs } from 'vue';
+import { ref ,getCurrentInstance} from 'vue';
+const instance = getCurrentInstance()
 
-// useAttrs 接收参数 官方订封装好的hook
-let attrs = useAttrs();
-console.log(attrs);
+const emit = ()=>{
+    instance?.proxy?.$Bus.emit('on-click','mitt')
+}
+
 </script>
 
 <style lang="less">
