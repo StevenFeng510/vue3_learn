@@ -5,6 +5,7 @@
         "module": "esnext",
         "moduleResolution": "node",
         "strict": true,
+        // tsx写法支持
         "jsx": "preserve",
         "jsxFactory": "h",
         "jsxFragmentFactory": "Fragment",
@@ -13,7 +14,9 @@
         "isolatedModules": true,
         "esModuleInterop": true,
         "lib": ["esnext", "dom"],
-        "skipLibCheck": true
+        "skipLibCheck": true,
+        // element插件支持
+        "types": ["element-plus/global"]
     },
     "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
     "references": [{ "path": "./tsconfig.node.json" }]

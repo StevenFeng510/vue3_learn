@@ -11,6 +11,7 @@
     "@types/lodash": "^4.14.182",
     "@vue/cli": "^5.0.7",
     "animate.css": "^4.1.1",
+    "element-plus": "^2.2.9",
     "gsap": "^3.10.4",
     "install": "^0.13.0",
     "less": "^4.1.3",

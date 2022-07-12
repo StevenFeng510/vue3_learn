@@ -2,14 +2,10 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './assets/css/reset.less'
 import Loading from './components/loading'
-import ElementPlus from 'element-plus'
-import 'element-plus/dist/index.css'
 
 import mitt from 'mitt'
 
 const Mit = mitt()
-
-const app = createApp(App)
 
 //TypeScript注册
 // 由于必须要拓展ComponentCustomProperties类型才能获得类型提示
@@ -37,6 +33,8 @@ declare module '@vue/runtime-core' {
     }
 }
 
+const app = createApp(App)
+
 app.config.globalProperties.$filters = {
     format<T>(str: T): string {
         return `真${str}`
@@ -45,9 +43,6 @@ app.config.globalProperties.$filters = {
 
 // 注入插件
 app.use(Loading)
-
-// 注入UI框架
-app.use(ElementPlus)
 
 app.config.globalProperties.$env = 'dev'
 
