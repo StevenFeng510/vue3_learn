@@ -4,17 +4,12 @@ import './assets/css/reset.less'
 import Loading from './components/loading'
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
-import { createPinia } from 'pinia'
 
 import mitt from 'mitt'
 
 const Mit = mitt()
 
 const app = createApp(App)
-
-// 注册Pinia
-const store = createPinia()
-app.use(store)
 
 //TypeScript注册
 // 由于必须要拓展ComponentCustomProperties类型才能获得类型提示
@@ -54,7 +49,6 @@ app.use(Loading)
 // 注入UI框架
 app.use(ElementPlus)
 
-// 全局注入变量
 app.config.globalProperties.$env = 'dev'
 
 app.mount('#app')
