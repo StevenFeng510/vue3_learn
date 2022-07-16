@@ -1,0 +1,19 @@
+{
+    "data": [
+        {
+            "name": "baidubaike",
+            "price": 400,
+            "id": 1
+        },
+        {
+            "name": "huotui",
+            "price": 455,
+            "id": 2
+        },
+        {
+            "name": "Steven",
+            "price": 6777,
+            "id": 3
+        }
+    ]
+}

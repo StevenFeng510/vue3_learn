@@ -20,6 +20,7 @@
     "mitt": "^3.0.0",
     "pinia": "^2.0.16",
     "vue": "^3.2.25",
+    "vue-router": "^4.1.2",
     "yarn": "^1.22.19"
   },
   "devDependencies": {
