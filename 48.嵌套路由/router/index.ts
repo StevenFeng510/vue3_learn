@@ -8,20 +8,18 @@ import { createRouter, createWebHistory, RouteRecordRaw, createWebHashHistory } 
 const routes: Array<RouteRecordRaw> = [
     {
         path: '/',
-        component: () => import('../components/root.vue'),
+        component: () => import('../components/footer.vue'),
         children: [
             {
-                path: '/user1',
-                components: {
-                    // 命名试图
-                    default: () => import('../components/login/index.vue'),
-                },
+                path: '',
+                name: 'Login', // 命名路由
+                component: () => import('../components/login/index.vue'),
             },
             {
-                path: '/user2',
-                components: {
-                    bbb: () => import('../components/register/index.vue'),
-                },
+                // :id 动态路由参数
+                path: '/reg',
+                name: 'Reg',
+                component: () => import('../components/register/index.vue'),
             },
         ],
     },

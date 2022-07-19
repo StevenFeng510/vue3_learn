@@ -1,5 +1,6 @@
 <template>
     <div>
+        <router-view></router-view>
         <hr />
         <h1>我是父路由</h1>
         <div>

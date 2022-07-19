@@ -3,6 +3,8 @@ import App from './App.vue'
 import './assets/css/reset.less'
 // 订阅发布第三方库
 import mitt from 'mitt'
+// loading插件
+import Loading from './components/loading'
 // 样式
 import ElementPlus from 'element-plus'
 import 'element-plus/dist/index.css'
@@ -89,6 +91,9 @@ app.config.globalProperties.$filters = {
         return `真${str}`
     },
 }
+
+// 注入插件
+app.use(Loading)
 
 // 注入UI框架
 app.use(ElementPlus)
